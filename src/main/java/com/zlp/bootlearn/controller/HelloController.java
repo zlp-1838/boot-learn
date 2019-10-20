@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @RequestMapping("/hello")
     public String sayHello(){
-        return "hello world";
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < 100; i++) {
+            builder.append(i+" * "+i+"</br>");
+        }
+        return builder.toString();
     }
 }
